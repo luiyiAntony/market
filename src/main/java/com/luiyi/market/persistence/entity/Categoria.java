@@ -12,13 +12,8 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria")
     private Integer idCategoria;
-    @Column(name = "id_cliente")
-    private String idCliente;
-    private LocalDateTime fecha;
-    @Column(name = "medio_pago")
-    private String medioPago;
-    private String comentario;
-    private String estado;
+    private String descripcion;
+    private Boolean estado;
 
     @OneToMany(mappedBy = "categoria")
     private List<Producto> productos;
@@ -31,43 +26,27 @@ public class Categoria {
         this.idCategoria = idCategoria;
     }
 
-    public String getIdCliente() {
-        return idCliente;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getMedioPago() {
-        return medioPago;
-    }
-
-    public void setMedioPago(String medioPago) {
-        this.medioPago = medioPago;
-    }
-
-    public String getComentario() {
-        return comentario;
-    }
-
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
-    }
-
-    public String getEstado() {
+    public Boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
 }
