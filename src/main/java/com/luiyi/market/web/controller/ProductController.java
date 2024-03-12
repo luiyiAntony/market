@@ -2,13 +2,13 @@ package com.luiyi.market.web.controller;
 
 import com.luiyi.market.domain.Product;
 import com.luiyi.market.domain.service.ProductService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController // se le indica a spring que esta es una clase controlador de una API REST
 @RequestMapping("/products")
